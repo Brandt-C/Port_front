@@ -5,8 +5,18 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
 
+  background: rgb(70,67,106);
+background: linear-gradient(90deg, rgb(58, 55, 97) 0%, rgb(212, 103, 1) 77%, rgba(33,218,255,1) 98%);
+
+  /* General
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,69,9,1) 31%, rgba(147,237,255,1) 100%); */
+
+  /* LIGHT THEME */
+ /* background: rgb(152,149,190);
+background: linear-gradient(90deg, rgba(152,149,190,1) 0%, rgba(230,146,50,1) 12%, rgba(147,237,255,1) 91%); */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +30,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #f87c2a;
 }
 
 body {

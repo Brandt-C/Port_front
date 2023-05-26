@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
 
-const pages = ['About'];
+
+const pages = ['mad'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export default function Nav() {
@@ -38,7 +39,6 @@ export default function Nav() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-
                     <Typography
                         variant="h6"
                         noWrap
@@ -46,18 +46,18 @@ export default function Nav() {
                         href="/"
                         sx={{
                             mr: 2,
-                            display: { xs: 'none', md: 'flex' },
+                            display: {  md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
+
                         }}
                     >
-                        <img src='./src/assets/logo1st.png' style={{ maxWidth: 50 + 'px', borderRadius: 20 + '%' }} />
+                        <img src='./src/assets/logo1st.png' style={{ maxWidth: 50 + 'px', borderRadius: 45 + '%' }} />
                     </Typography>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -92,17 +92,17 @@ export default function Nav() {
                                 </MenuItem>
                             ))}
                         </Menu>
-                    </Box>
+                    </Box> */}
 
 
                     <Typography
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
+                        href="/about"
                         sx={{
                             mr: 2,
-                            display: { xs: 'flex', md: 'none' },
+                            display: { xs: 'flex' },
                             flexGrow: 1,
                             fontFamily: 'monospace',
                             fontWeight: 700,
@@ -113,7 +113,25 @@ export default function Nav() {
                     >
                         About
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="a"
+                        href="/mad"
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'flex' },
+                            flexGrow: 1,
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                    >
+                        Madiverse
+                    </Typography>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
@@ -123,7 +141,7 @@ export default function Nav() {
                                 {page}
                             </Button>
                         ))}
-                    </Box>
+                    </Box> */}
 
                     <Box sx={{ flexGrow: 0 }}>
 
