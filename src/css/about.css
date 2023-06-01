@@ -4,3 +4,12 @@
 p{
     font-weight: 500;
 }
+#jh {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+.photo-cap {
+    font-size: xx-small;
+    margin: 5px;
+}
