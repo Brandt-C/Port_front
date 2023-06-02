@@ -1,6 +1,6 @@
 
 import './App.css'
-import Nav from './componenets/Nav'
+import Nav from './components/Nav'
 import Home from './views/Home'
 import { Route, Routes } from 'react-router-dom'
 import Mad from './views/Mad'

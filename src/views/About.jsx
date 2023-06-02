@@ -14,8 +14,8 @@ const About = () => {
             <p>Now I've taken that same success ratio and applied it to software and apps.  Watch out internet, some small portions of you are due for improvement. . . </p>
             <h6>Did you come here to offer me untold amounts of money for a job?  Sweet, I'm glad you're here and you should get in touch (links below!).  If not, that's ok, we can still hang (same links below!)</h6>
             <div>
-            <Link class='logo-link' to='https://www.linkedin.com/in/brandt-carlson-51735625' target="_blank"><img src='./src/assets/In-White-48.png'/></Link>
-            <Link class='logo-link' to='https://github.com/Brandt-C' target="_blank"><img src="./src/assets/github-mark-white.png" style={{ maxWidth: 50 + 'px'}}/></Link>
+            <Link className='logo-link' to='https://www.linkedin.com/in/brandt-carlson-51735625' target="_blank"><img src='./src/assets/In-White-48.png'/></Link>
+            <Link className='logo-link' to='https://github.com/Brandt-C' target="_blank"><img src="./src/assets/github-mark-white.png" style={{ maxWidth: 50 + 'px'}}/></Link>
             
             </div>
         </>
