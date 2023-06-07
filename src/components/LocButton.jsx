@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
+import { FormHelperText } from '@mui/material';
 
 export default function LocButton() {
     const [locUni, setLocUni] = useState('');
@@ -16,10 +17,11 @@ export default function LocButton() {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Location from Universe</InputLabel>
+      <FormControl >
+        <InputLabel id="demo-simple-select-helper-label">Location from Universe</InputLabel>
         <Select
-          
+                  labelId="simple-select-label"
+                  id="simple-select"
           value={locUni}
           label="Choose location origin universe"
           onChange={handleChange}
@@ -27,6 +29,7 @@ export default function LocButton() {
           <MenuItem value={'rm'}>Rick and Morty</MenuItem>
           <MenuItem value={'sw'}>Star Wars</MenuItem>
         </Select>
+        <FormHelperText>Choose an origin universe for a random location choice!</FormHelperText>
       </FormControl>
     </Box>
   );

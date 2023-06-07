@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
+import { FormHelperText } from '@mui/material';
 
 export default function CharButton() {
     const [charUni, setCharUni] = useState('');
@@ -17,8 +18,10 @@ export default function CharButton() {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Character from Universe</InputLabel>
+        <InputLabel id="demo-simple-select-helper-label">Character from Universe</InputLabel>
         <Select
+        labelId="simple-select-label"
+        id="simple-select"
           value={charUni}
           label="Choose character origin universe"
           onChange={handleChange}
@@ -28,6 +31,7 @@ export default function CharButton() {
           <MenuItem value={'got'}>Game of Thrones</MenuItem>
           <MenuItem value={'sw'}>Star Wars</MenuItem>
         </Select>
+        <FormHelperText>Choose an origin universe for a random character choice!</FormHelperText>
       </FormControl>
     </Box>
   );

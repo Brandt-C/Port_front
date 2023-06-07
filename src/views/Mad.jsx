@@ -64,12 +64,12 @@ const Mad = () => {
             <div className="button-container">
                 <div className="char-buttons">
                 {chars? chars.map((char) => {
-                return < CharButton id={char}></CharButton>
+                return < CharButton id={char} key={char}></CharButton>
             }) : null}
           </div>
           <div className="loc-buttons">
             {locs? locs.map((loc) => {
-                return  < LocButton id={loc}></LocButton>
+                return  < LocButton id={loc} key={loc}></LocButton>
             }) : null}
             </div>
                 </div>
