@@ -4,8 +4,8 @@ import axios from "axios";
 import PublicIcon from '@mui/icons-material/Public';
 import SnowshoeingIcon from '@mui/icons-material/Snowshoeing';
 import { Button } from '@mui/material';
-
-
+import CharButton from "../components/CharButton";
+import LocButton from "../components/LocButton";
         // <Button variant='oulined' startIcon={<SnowshoeingIcon />}>Bring in Characters</Button>
 
 // Going to have to bring in buttons here for usability's sake and trash components?  
@@ -50,6 +50,9 @@ const Mad = () => {
 
     // <Button id={'c' + i} key={i} variant='outlined' startIcon={<SnowshoeingIcon />}>Character</Button>
     // <Button id={'l' + i} key={i} variant='outlined' startIcon={<PublicIcon />}>Character</Button>
+
+    // <Button id={char} key={char} variant='contained' startIcon={<SnowshoeingIcon />}>Choose Character</Button>
+    // <Button id={loc} key={loc} variant='contained' startIcon={<PublicIcon />}>Location</Button>
     return (
         <>
             
@@ -58,15 +61,17 @@ const Mad = () => {
             <h4>Like a mad-lib generator with choices from multiple fictional universes.</h4>
             {!chars? < Button onClick={() => loadButtons()} variant="contained">Let's build a story!</Button> : null}
             
-            <div className="cbuttons">
+            <div className="button-container">
+                <div className="char-buttons">
                 {chars? chars.map((char) => {
-                return <Button id={char} key={char} variant='contained' startIcon={<SnowshoeingIcon />}>Choose Character</Button>
+                return < CharButton id={char}></CharButton>
+            }) : null}
+          </div>
+          <div className="loc-buttons">
+            {locs? locs.map((loc) => {
+                return  < LocButton id={loc}></LocButton>
             }) : null}
             </div>
-            <div className="lbuttons">
-            {locs? locs.map((loc) => {
-                return <Button id={loc} key={loc} variant='contained' startIcon={<PublicIcon />}>Location</Button>
-            }) : null}
                 </div>
         </>
     )
