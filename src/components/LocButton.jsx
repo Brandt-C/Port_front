@@ -7,12 +7,19 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 import { FormHelperText } from '@mui/material';
 
-export default function LocButton() {
+export default function LocButton(props) {
     const [locUni, setLocUni] = useState('');
 
   const handleChange = (event) => {
     console.log(event, event.target.value)
     setLocUni(event.target.value);
+    let copyLocs = props.locs;
+    for (let i = 0; i<copyLocs.length; i++){
+      if (copyLocs[i] === props.id){
+        copyLocs[i] = event.target.value
+      }
+    } console.log(copyLocs);
+    props.setLocs(copyLocs)
   };
 
   return (

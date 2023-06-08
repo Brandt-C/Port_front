@@ -7,12 +7,19 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 import { FormHelperText } from '@mui/material';
 
-export default function CharButton() {
+export default function CharButton(props) {
     const [charUni, setCharUni] = useState('');
 
   const handleChange = (event) => {
-    console.log(event, event.target.value)
+    console.log(event, event.target.value);
     setCharUni(event.target.value);
+    let copyChars = props.chars;
+    for (let i = 0; i<copyChars.length; i++){
+      if (copyChars[i] === props.id){
+        copyChars[i] = event.target.value
+      }
+    } console.log(copyChars);
+    props.setChars(copyChars)
   };
 
   return (
