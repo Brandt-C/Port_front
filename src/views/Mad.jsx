@@ -1,22 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-import PublicIcon from '@mui/icons-material/Public';
-import SnowshoeingIcon from '@mui/icons-material/Snowshoeing';
+// import PublicIcon from '@mui/icons-material/Public';
+// import SnowshoeingIcon from '@mui/icons-material/Snowshoeing';
 import { Button } from '@mui/material';
 import CharButton from "../components/CharButton";
 import LocButton from "../components/LocButton";
+
+
         // <Button variant='oulined' startIcon={<SnowshoeingIcon />}>Bring in Characters</Button>
 
-// Going to have to bring in buttons here for usability's sake and trash components?  
-// https://www.carlrippon.com/repeat-element-n-times-in-jsx/
-// Looking to use this ^^^ for button rendering?
-
 const Mad = () => {
-
-    // const [story, setStory] = useState(null);
-
-
 
     const getDeets = async () => {
         let response = await axios.get('http://127.0.0.1:5000/api/story/rando');
@@ -47,6 +41,15 @@ const Mad = () => {
         setChars(charButtonArray);
         setLocs(locButtonArray);
     }
+    // useEffect(() => {
+    //     console.log('changed!!!!!')
+    // }, [charUni])
+    // const changeChar = () => {
+    //     let copyChars = [...chars];
+    //     for (let i = 0; i<copyChars.length; i++){
+    //         if (st === copyChars)
+    //     }
+    // }
 
     // <Button id={'c' + i} key={i} variant='outlined' startIcon={<SnowshoeingIcon />}>Character</Button>
     // <Button id={'l' + i} key={i} variant='outlined' startIcon={<PublicIcon />}>Character</Button>
