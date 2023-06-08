@@ -42,6 +42,15 @@ const Mad = () => {
         setChars(charButtonArray);
         setLocs(locButtonArray);
     }
+    const sendStory = async () => {
+        let response = await axios.post("http://127.0.0.1:5000/api/getstory",{
+            c : chars,
+            l : locs,
+            sid : deets.sid
+        });
+        return response.status === 200 ? console.log(response.data) : console.log(null)
+    }
+
     // useEffect(() => {
     //     console.log('changed!!!!!')
     // }, [charUni])
@@ -77,7 +86,7 @@ const Mad = () => {
                     }) : null}
                 </div>
                 <div className="ready-button">
-                    {chars ? <Button variant='oulined' onClick={()=> {console.log("let's make a story!!!")}} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> : null}
+                    {chars ? <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> : null}
                 </div>
             </div>
         </>
