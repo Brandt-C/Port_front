@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import axios from "axios";
 
 // import PublicIcon from '@mui/icons-material/Public';
@@ -7,6 +7,7 @@ import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import { Button } from '@mui/material';
 import CharButton from "../components/CharButton";
 import LocButton from "../components/LocButton";
+import { Link } from "react-router-dom";
 
 
 // <Button variant='oulined' startIcon={<SnowshoeingIcon />}>Bring in Characters</Button>
@@ -26,7 +27,7 @@ const Mad = () => {
 
     const [chars, setChars] = useState();
     const [locs, setLocs] = useState();
-
+    const [text, setText] = useState()
 
 
     const loadButtons = () => {
@@ -48,25 +49,14 @@ const Mad = () => {
             l : locs,
             sid : deets.sid
         });
-        return response.status === 200 ? console.log(response.data, response.data.text.text) : console.log(null)
+        if (response.status === 200) {
+            console.log(response.data, response.data.text);
+            setText(response.data.text);
+        }
     }
     
-    useEffect(() => {
-        console.log('changed!!!!!');
-        console.log(chars)
-    }, [chars]);
-    // const changeChar = () => {
-    //     let copyChars = [...chars];
-    //     for (let i = 0; i<copyChars.length; i++){
-    //         if (st === copyChars)
-    //     }
-    // }
-
-    // <Button id={'c' + i} key={i} variant='outlined' startIcon={<SnowshoeingIcon />}>Character</Button>
-    // <Button id={'l' + i} key={i} variant='outlined' startIcon={<PublicIcon />}>Character</Button>
-
-    // <Button id={char} key={char} variant='contained' startIcon={<SnowshoeingIcon />}>Choose Character</Button>
-    // <Button id={loc} key={loc} variant='contained' startIcon={<PublicIcon />}>Location</Button>
+{/* <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> */}
+{/* <Link to="/story" state={{'chars':chars, 'locs':locs}}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button></Link> */}
     return (
         <>
 
@@ -87,7 +77,13 @@ const Mad = () => {
                     }) : null}
                 </div>
                 <div className="ready-button">
-                    {chars ? <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> : null}
+                    {chars && !text?
+                     <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> : 
+                     text ?
+                     <Link to="/story" state={{'chars':chars, 'locs':locs, 'text':text}}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon/>}>View story</Button></Link>
+                     : 
+                     null}
+
                 </div>
             </div>
         </>

@@ -13,15 +13,9 @@ export default function LocButton(props) {
   const [locUni, setLocUni] = useState('');
 
   const handleChange = (event) => {
-    // console.log(event, event.target.value)
     setLocUni(event.target.value);
     loadLocDeets(event.target.value)
-    // for (let i = 0; i < copyLocs.length; i++) {
-    //   if (copyLocs[i] === props.id) {
-    //     copyLocs[i] = event.target.value
-    //   }
-    // } console.log(copyLocs);
-    // props.setLocs(copyLocs)
+
   };
   const getLocDeets = async (st) => {
     let response = await axios.get(`http://127.0.0.1:5000/api/loc/rando/${st}`);
