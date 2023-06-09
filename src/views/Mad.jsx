@@ -48,12 +48,13 @@ const Mad = () => {
             l : locs,
             sid : deets.sid
         });
-        return response.status === 200 ? console.log(response.data) : console.log(null)
+        return response.status === 200 ? console.log(response.data, response.data.text.text) : console.log(null)
     }
-
-    // useEffect(() => {
-    //     console.log('changed!!!!!')
-    // }, [charUni])
+    
+    useEffect(() => {
+        console.log('changed!!!!!');
+        console.log(chars)
+    }, [chars]);
     // const changeChar = () => {
     //     let copyChars = [...chars];
     //     for (let i = 0; i<copyChars.length; i++){

@@ -4,31 +4,51 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FormHelperText } from '@mui/material';
+import axios from 'axios';
+
 
 export default function LocButton(props) {
-    const [locUni, setLocUni] = useState('');
+  const [locUni, setLocUni] = useState('');
 
   const handleChange = (event) => {
     console.log(event, event.target.value)
     setLocUni(event.target.value);
     let copyLocs = props.locs;
-    for (let i = 0; i<copyLocs.length; i++){
-      if (copyLocs[i] === props.id){
+    for (let i = 0; i < copyLocs.length; i++) {
+      if (copyLocs[i] === props.id) {
         copyLocs[i] = event.target.value
       }
     } console.log(copyLocs);
     props.setLocs(copyLocs)
   };
+  const getLocDeets = async (st) => {
+    let response = await axios.get(`http://127.0.0.1:5000/api/loc/rando/${st}`);
+    return response.status === 200 ? response.data : null
+  };
+  const loadLocDeets = async (st) => {
+    let data = await getLocDeets(st);
+    console.log(data);
+  };
+  useEffect(() => {
+    console.log('locUni has been changed and this might be working!!!!');
+    let copyLocs = props.locs;
+    const compStr = ['rm', 'sw']
+    for (let i = 0; i < copyLocs.length; i++) {
+      if (compStr.includes(copyLocs[i])) {
+        loadLocDeets(copyLocs[i]);
+      }
+    }
+  }, [locUni]);
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl >
         <InputLabel id="demo-simple-select-helper-label">Location from Universe</InputLabel>
         <Select
-                  labelId="simple-select-label"
-                  id="simple-select"
+          labelId="simple-select-label"
+          id="simple-select"
           value={locUni}
           label="Choose location origin universe"
           onChange={handleChange}
