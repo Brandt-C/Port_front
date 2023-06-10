@@ -12,16 +12,8 @@ export default function CharButton(props) {
   const [charUni, setCharUni] = useState('');
 
   const handleChange = (event) => {
-    // console.log(event, event.target.value);
     setCharUni(event.target.value);
-    // let copyChars = props.chars;
-    // let x = loadCharDeets(event.target.value);
-    // console.log(`X!!!!!!!! --- ${x}`);
-    // console.log(copyChars[props.id.slice(1)]);
     loadCharDeets(event.target.value)
-    // copyChars[props.id.slice(1)] = ;
-    // console.log(copyChars);
-    // props.setChars(copyChars)
   };
   const getCharDeets = async (st) => {
     let response = await axios.get(`http://127.0.0.1:5000/api/char/rando/${st}`);

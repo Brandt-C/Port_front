@@ -1,0 +1,25 @@
+#c-content {
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+.page-container {
+    border: rgb(105, 105, 105) 2px solid;
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #000000;
+    background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#c-card {
+    background-color: rgb(139, 138, 138);
+}
+#text {
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
