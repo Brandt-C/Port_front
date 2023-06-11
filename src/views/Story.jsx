@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import CharCard from "../components/CharCard";
 import "../css/story.css"
+import LocCard from "../components/LocCard";
 
 const Story = () => {
 
@@ -23,10 +24,16 @@ const Story = () => {
                 </div>
                 <div className="loc-container">
                     <h3>On:</h3>
+                    {state.locs.map((loc, id) => {
+                        return <LocCard id={id} loc={loc}></LocCard>
+                    })}
                 </div>
 
                 <div className="story container">
-                    <p id="text">{state.text}</p>
+                    {state.text.map((ptag, key) => {
+                        return <p key={key} className="text">{ptag}</p>
+                    })}
+                    
                 </div>
 
             </div>

@@ -19,7 +19,7 @@
 #c-card {
     background-color: rgb(139, 138, 138);
 }
-#text {
+.text {
     margin-right: 2rem;
     margin-left: 2rem;
 }
