@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 // import PublicIcon from '@mui/icons-material/Public';
@@ -20,10 +20,11 @@ const Mad = () => {
     };
     const loadDeets = async () => {
         let data = await getDeets();
-        console.log(data);
+        // console.log(data);
         setDeets(data);
     }
     const [deets, setDeets] = useState(() => loadDeets());
+
 
     const [chars, setChars] = useState();
     const [locs, setLocs] = useState();
@@ -43,20 +44,47 @@ const Mad = () => {
         setChars(charButtonArray);
         setLocs(locButtonArray);
     }
+    const charUniArr = ['rm', 'sw', 'got', 'pok']
+    const getRandomCharDeets = async (st) => {
+        let response = await axios.get(`http://127.0.0.1:5000/api/char/rando/${st}`);
+        return response.status === 200 ? response.data : null
+    };
+    const loadRandomCharDeets = async (st) => {
+        let data = await getRandomCharDeets(st);
+        // console.log(` got the random char data:${data}`);
+        return data.data;
+    };
+    const checkChars = async () => {
+        let copyChars = [...chars];
+        for (let i = 0; i < copyChars.length; i++) {
+            if (typeof copyChars[i] === 'string') {
+                let rando = charUniArr[Math.floor(Math.random() * charUniArr.length)];
+                copyChars[i] = await loadRandomCharDeets(rando);
+            }
+        }
+        console.log(copyChars);  // this looks like it should but. . . 
+        setChars(copyChars); //this doesn't appear to be working!
+    }
     const sendStory = async () => {
-        let response = await axios.post("http://127.0.0.1:5000/api/getstory",{
-            c : chars,
-            l : locs,
-            sid : deets.sid
+        await checkChars();
+        console.log('now');
+        console.log(chars); // prints out the ids in the array ==> ['c0', 'c1 ], looks like state isn't actually being reset?
+        let response = await axios.post("http://127.0.0.1:5000/api/getstory", {
+            c: chars,
+            l: locs,
+            sid: deets.sid
         });
         if (response.status === 200) {
             console.log(response.data, response.data.text);
             setText(response.data.text);
         }
     }
-    
-{/* <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> */}
-{/* <Link to="/story" state={{'chars':chars, 'locs':locs}}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button></Link> */}
+    useEffect(() => {
+        console.log('looking for props to cause something here. . . . ');
+    }, []);
+
+    {/* <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> */ }
+    {/* <Link to="/story" state={{'chars':chars, 'locs':locs}}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button></Link> */ }
     return (
         <>
 
@@ -77,12 +105,12 @@ const Mad = () => {
                     }) : null}
                 </div>
                 <div className="ready-button">
-                    {chars && !text?
-                     <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> : 
-                     text ?
-                     <Link to="/story" state={{'chars':chars, 'locs':locs, 'text':text}}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon/>}>View story</Button></Link>
-                     : 
-                     null}
+                    {chars && !text ?
+                        <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> :
+                        text ?
+                            <Link to="/story" state={{ 'chars': chars, 'locs': locs, 'text': text }}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon />}>View story</Button></Link>
+                            :
+                            null}
 
                 </div>
             </div>

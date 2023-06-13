@@ -27,6 +27,10 @@ export default function CharCard(props) {
         <Typography variant="body2" color="text.light">
           {props.char.desc}
         </Typography>
+        <Typography variant="body2" color="text.light">
+          <h5>From</h5>
+          {props.char.uni}
+        </Typography>
       </CardContent>
     </Card>
   );

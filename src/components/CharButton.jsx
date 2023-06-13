@@ -26,7 +26,7 @@ export default function CharButton(props) {
     copyChars[props.id.slice(1)] = data.data;
     console.log(copyChars);
     props.setChars(copyChars);
-  }
+  };
   // useEffect(() => {
   //   console.log('charUni has been changed and this might be working!!!!');
   //   // let copyChars = props.chars;
