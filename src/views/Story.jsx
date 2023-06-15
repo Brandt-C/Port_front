@@ -22,8 +22,9 @@ const Story = () => {
                         return <CharCard id={id} char={char}></CharCard>
                     })}
                 </div>
+                <h3>On:</h3>
                 <div className="loc-container">
-                    <h3>On:</h3>
+                    
                     {state.locs.map((loc, id) => {
                         return <LocCard id={id} loc={loc}></LocCard>
                     })}

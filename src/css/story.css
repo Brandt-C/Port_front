@@ -23,3 +23,8 @@
     margin-right: 2rem;
     margin-left: 2rem;
 }
+.loc-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

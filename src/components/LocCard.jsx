@@ -26,6 +26,10 @@ export default function LocCard(props) {
         <Typography variant="body2" color="text.light">
           {props.loc.desc}
         </Typography>
+        <Typography variant="body2" color="text.light">
+          <p>Residents:</p>
+          {props.loc.residents}
+        </Typography>
       </CardContent>
     </Card>
   );
