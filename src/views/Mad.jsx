@@ -8,6 +8,7 @@ import { Button } from '@mui/material';
 import CharButton from "../components/CharButton";
 import LocButton from "../components/LocButton";
 import { Link } from "react-router-dom";
+import IncompleteAlert from "../components/IncompleteAlert";
 
 
 // <Button variant='oulined' startIcon={<SnowshoeingIcon />}>Bring in Characters</Button>
@@ -25,10 +26,10 @@ const Mad = () => {
     }
     const [deets, setDeets] = useState(() => loadDeets());
 
-
+    const [ready, setReady] = useState({r: false})
     const [chars, setChars] = useState();
     const [locs, setLocs] = useState();
-    const [text, setText] = useState()
+    const [text, setText] = useState();
 
 
     const loadButtons = () => {
@@ -44,30 +45,48 @@ const Mad = () => {
         setChars(charButtonArray);
         setLocs(locButtonArray);
     }
-    const charUniArr = ['rm', 'sw', 'got', 'pok']
-    const getRandomCharDeets = async (st) => {
-        let response = await axios.get(`http://127.0.0.1:5000/api/char/rando/${st}`);
-        return response.status === 200 ? response.data : null
-    };
-    const loadRandomCharDeets = async (st) => {
-        let data = await getRandomCharDeets(st);
-        // console.log(` got the random char data:${data}`);
-        return data.data;
-    };
-    const checkChars = async () => {
-        let copyChars = [...chars];
-        for (let i = 0; i < copyChars.length; i++) {
-            if (typeof copyChars[i] === 'string') {
-                let rando = charUniArr[Math.floor(Math.random() * charUniArr.length)];
-                copyChars[i] = await loadRandomCharDeets(rando);
+// useEffect(()=> console.log('useEffect for CHARS and LOCS in mad.jsx is working!!!!'), [chars, locs])
+    // const charUniArr = ['rm', 'sw', 'got', 'pok']
+    // const getRandomCharDeets = async (st) => {
+    //     let response = await axios.get(`http://127.0.0.1:5000/api/char/rando/${st}`);
+    //     return response.status === 200 ? response.data : null
+    // };
+    // const loadRandomCharDeets = async (st) => {
+    //     let data = await getRandomCharDeets(st);
+    //     // console.log(` got the random char data:${data}`);
+    //     return data.data;
+    // };
+    // const checkChars = async () => {
+    //     let copyChars = [...chars];
+    //     for (let i = 0; i < copyChars.length; i++) {
+    //         if (typeof copyChars[i] === 'string') {
+    //             let rando = charUniArr[Math.floor(Math.random() * charUniArr.length)];
+    //             copyChars[i] = await loadRandomCharDeets(rando);
+    //         }
+    //     }
+    //     console.log(copyChars);  // this looks like it should but. . . 
+    //     setChars(copyChars);
+    //     console.log(chars); //this doesn't appear to be working!
+    // }
+
+    const checkReady = () => {
+            for (let i = 0; i < chars.length; i++) {
+                if (typeof chars[i] !== 'object') {
+                    return false
+                }
             }
-        }
-        console.log(copyChars);  // this looks like it should but. . . 
-        setChars(copyChars); //this doesn't appear to be working!
+            for (let i = 0; i < locs.length; i++) {
+                if (typeof locs[i] !== 'object') {
+                    return false
+                }
+            }return true
     }
     const sendStory = async () => {
-        await checkChars();
-        console.log('now');
+        // await checkChars();
+        if (!checkReady()){
+            console.log('not ready!!!!!');
+            return
+        }
         console.log(chars); // prints out the ids in the array ==> ['c0', 'c1 ], looks like state isn't actually being reset?
         let response = await axios.post("http://127.0.0.1:5000/api/getstory", {
             c: chars,
@@ -104,15 +123,18 @@ const Mad = () => {
                         return < LocButton id={loc} key={loc} locs={locs} setLocs={setLocs}></LocButton>
                     }) : null}
                 </div>
-                <div className="ready-button">
-                    {chars && !text ?
-                        <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> :
-                        text ?
-                            <Link to="/story" state={{ 'chars': chars, 'locs': locs, 'text': text }}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon />}>View story</Button></Link>
-                            :
-                            null}
-
+                <div className="incomp-alert">
+                    <IncompleteAlert ></IncompleteAlert>
                 </div>
+                <div className="ready-button">
+                    {chars?
+                        <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> : null}
+                </div>
+                <div className="send-story-button">
+                {text ?
+                            <Link to="/story" state={{ 'chars': chars, 'locs': locs, 'text': text }}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon />}>View story</Button></Link>
+                            : null}
+                      </div>      
             </div>
         </>
     )

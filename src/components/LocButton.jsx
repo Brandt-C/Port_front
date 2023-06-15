@@ -30,14 +30,13 @@ export default function LocButton(props) {
     props.setLocs(copyLocs)
   };
   useEffect(() => {
-    console.log('locUni has been changed and this might be working!!!!');
-    let copyLocs = props.locs;
-    const compStr = ['rm', 'sw']
-    for (let i = 0; i < copyLocs.length; i++) {
-      if (compStr.includes(copyLocs[i])) {
-        loadLocDeets(copyLocs[i]);
-      }
-    }
+    // let copyLocs = props.locs;
+    // const compStr = ['rm', 'sw']
+    // for (let i = 0; i < copyLocs.length; i++) {
+    //   if (compStr.includes(copyLocs[i])) {
+    //     loadLocDeets(copyLocs[i]);
+    //   }
+    // }
   }, [locUni]);
 
   return (

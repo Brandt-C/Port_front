@@ -13,7 +13,7 @@ export default function CharButton(props) {
 
   const handleChange = (event) => {
     setCharUni(event.target.value);
-    loadCharDeets(event.target.value)
+    loadCharDeets(event.target.value);
   };
   const getCharDeets = async (st) => {
     let response = await axios.get(`http://127.0.0.1:5000/api/char/rando/${st}`);
@@ -27,8 +27,8 @@ export default function CharButton(props) {
     console.log(copyChars);
     props.setChars(copyChars);
   };
-  // useEffect(() => {
-  //   console.log('charUni has been changed and this might be working!!!!');
+  useEffect(() => {
+    // console.log('charUni has been changed and this might be working!!!!');
   //   // let copyChars = props.chars;
   //   // const compStr = ['got', 'rm', 'pok', 'sw']
   //   // for (let i=0; i<copyChars.length; i++){
@@ -36,7 +36,7 @@ export default function CharButton(props) {
   //   //     loadCharDeets(copyChars[i]);
   //   //   }
   //   // }
-  // }, [charUni])
+  }, [charUni])
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>

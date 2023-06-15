@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { colors, rgbToHex } from '@mui/material';
 
 export default function LocCard(props) {
     console.log(props.loc);
@@ -11,25 +12,30 @@ export default function LocCard(props) {
     // }
   return (
     <Card id='l-card' sx={{ 
-        maxWidth: 250,
+        maxWidth: 400,
         mx: 2,
-        my: 1
+        my: 1,
         }}>
       <CardMedia
 
         title={props.loc.name}
       />
       <CardContent id='c-content'>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h4" component="div">
         {props.loc.name}
         </Typography>
         <Typography variant="body2" color="text.light">
           {props.loc.desc}
         </Typography>
+        <p>Residents:</p>
         <Typography variant="body2" color="text.light">
-          <p>Residents:</p>
           {props.loc.residents}
         </Typography>
+        <p>Universe:</p>
+        <Typography variant="body2" color="text.light">
+          {props.loc.uni}
+        </Typography>
+
       </CardContent>
     </Card>
   );
