@@ -3,6 +3,8 @@
 }
 p{
     font-weight: 500;
+    max-width: 75vw;
+    text-align: center;
 }
 #jh {
     max-width: 300px;
@@ -12,4 +14,17 @@ p{
 .photo-cap {
     font-size: xx-small;
     margin: 5px;
+}
+#mu{
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+.api-links {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+h5 {
+    max-width: 75vw;
 }

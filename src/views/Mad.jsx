@@ -26,7 +26,7 @@ const Mad = () => {
     }
     const [deets, setDeets] = useState(() => loadDeets());
 
-    const [ready, setReady] = useState({r: false})
+    const [ready, setReady] = useState({r:0})
     const [chars, setChars] = useState();
     const [locs, setLocs] = useState();
     const [text, setText] = useState();
@@ -84,9 +84,10 @@ const Mad = () => {
     const sendStory = async () => {
         // await checkChars();
         if (!checkReady()){
-            console.log('not ready!!!!!');
+            setReady({r:1});
             return
         }
+        setReady({r:2});
         console.log(chars); // prints out the ids in the array ==> ['c0', 'c1 ], looks like state isn't actually being reset?
         let response = await axios.post("http://127.0.0.1:5000/api/getstory", {
             c: chars,
@@ -107,24 +108,24 @@ const Mad = () => {
     return (
         <>
 
-            <h1>Under construction!</h1>
-            <h3>This is gonna be some really cool stuff.  Pretty soon.  I swear.</h3>
-            <h4>Like a mad-lib generator with choices from multiple fictional universes.</h4>
+            <h1>Your Madiverse Story:</h1>
+            <h3>Choose from 4 different fictional universes to generate a unique story!</h3>
+
             {!chars ? < Button onClick={() => loadButtons()} variant="contained">Let's build a story!</Button> : null}
 
             <div className="button-container">
                 <div className="char-buttons">
-                    {chars ? chars.map((char) => {
-                        return < CharButton id={char} key={char} chars={chars} setChars={setChars}></CharButton>
+                    {chars ? chars.map((char, id) => {
+                        return < CharButton id={char} key={id} chars={chars} setChars={setChars}></CharButton>
                     }) : null}
                 </div>
                 <div className="loc-buttons">
-                    {locs ? locs.map((loc) => {
-                        return < LocButton id={loc} key={loc} locs={locs} setLocs={setLocs}></LocButton>
+                    {locs ? locs.map((loc, id) => {
+                        return < LocButton id={loc} key={id} locs={locs} setLocs={setLocs}></LocButton>
                     }) : null}
                 </div>
                 <div className="incomp-alert">
-                    <IncompleteAlert ></IncompleteAlert>
+                {ready && ready.r === 1 ? <IncompleteAlert ></IncompleteAlert> :null}
                 </div>
                 <div className="ready-button">
                     {chars?
