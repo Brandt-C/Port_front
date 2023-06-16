@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import '../css/mad.css'
 
 // import PublicIcon from '@mui/icons-material/Public';
 // import SnowshoeingIcon from '@mui/icons-material/Snowshoeing';
@@ -129,11 +130,11 @@ const Mad = () => {
                 </div>
                 <div className="ready-button">
                     {chars?
-                        <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> : null}
+                        <Button variant='oulined'  sx={{my:2}} onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> : null}
                 </div>
                 <div className="send-story-button">
                 {text ?
-                            <Link to="/story" state={{ 'chars': chars, 'locs': locs, 'text': text }}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon />}>View story</Button></Link>
+                            <Link to="/story" state={{ 'chars': chars, 'locs': locs, 'text': text }}><Button id='view-story' variant='oulined' sx={{my:2}} startIcon={< AutoStoriesOutlinedIcon />}>View story</Button></Link>
                             : null}
                       </div>      
             </div>

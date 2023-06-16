@@ -6,14 +6,16 @@ p{
     max-width: 75vw;
     text-align: center;
 }
-#jh {
-    max-width: 300px;
+.work-pics{
+    max-width: 270px;
     height: auto;
     border-radius: 10px;
+
 }
 .photo-cap {
     font-size: xx-small;
     margin: 5px;
+    padding-bottom: 10px;
 }
 #mu{
     max-width: 250px;
@@ -27,4 +29,11 @@ p{
 
 h5 {
     max-width: 75vw;
+}
+.pics-div{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }

@@ -42,10 +42,10 @@ export default function LocButton(props) {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl >
-        <InputLabel id="demo-simple-select-helper-label">Location from Universe</InputLabel>
+        <InputLabel sx={{color:'white'}} id="demo-simple-select-helper-label">Location from Universe</InputLabel>
         <Select
           labelId="simple-select-label"
-          id="simple-select"
+          id="simple-select-loc"
           value={locUni}
           label="Choose location origin universe"
           onChange={handleChange}

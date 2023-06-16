@@ -38,12 +38,12 @@ export default function CharButton(props) {
   //   // }
   }, [charUni])
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120, my:2 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-helper-label">Character from Universe</InputLabel>
+        <InputLabel id="demo-simple-select-helper-label" sx={{color:'white'}}>Character Universe Choice</InputLabel>
         <Select
           labelId="simple-select-label"
-          id="simple-select"
+          id="simple-select-char"
           value={charUni}
           label="Choose character origin universe"
           onChange={handleChange}
@@ -54,7 +54,7 @@ export default function CharButton(props) {
           <MenuItem value={'sw'}>Star Wars</MenuItem>
           <MenuItem value={'pok'}>Pokemon</MenuItem>
         </Select>
-        <FormHelperText>Choose an origin universe for a random character choice!</FormHelperText>
+        <FormHelperText >Choose an origin universe for a random character choice!</FormHelperText>
       </FormControl>
     </Box>
   );
