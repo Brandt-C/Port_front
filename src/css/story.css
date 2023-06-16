@@ -28,3 +28,10 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.story-action-container {
+    display: flex;
+    justify-content: center;
+}
+.action-btn {
+    margin-left: 50px;
+}
