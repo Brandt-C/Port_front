@@ -17,7 +17,7 @@ import IncompleteAlert from "../components/IncompleteAlert";
 const Mad = () => {
 
     const getDeets = async () => {
-        let response = await axios.get('http://127.0.0.1:5000/api/story/rando');
+        let response = await axios.get('https://behind-the-madiverse.onrender.com/api/story/rando');
         return response.status === 200 ? response.data : null
     };
     const loadDeets = async () => {
@@ -90,7 +90,7 @@ const Mad = () => {
         }
         setReady({r:2});
         console.log(chars); // prints out the ids in the array ==> ['c0', 'c1 ], looks like state isn't actually being reset?
-        let response = await axios.post("http://127.0.0.1:5000/api/getstory", {
+        let response = await axios.post("https://behind-the-madiverse.onrender.com/api/getstory", {
             c: chars,
             l: locs,
             sid: deets.sid

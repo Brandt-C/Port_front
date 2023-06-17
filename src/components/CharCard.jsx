@@ -13,10 +13,15 @@ export default function CharCard(props) {
     <Card id='c-card' sx={{ 
         maxWidth: 250,
         mx: 2,
-        my: 1
+        my: 1,
+        border: '1px solid white',
+
         }}>
       <CardMedia
-        sx={{ height: 290 }}
+        sx={{ height: 290,
+          border: '1px solid white',
+          
+        }}
         image={props.char.img}
         title={props.char.full_name}
       />

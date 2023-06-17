@@ -45,6 +45,7 @@ const Story = () => {
                 </div>
 
             </div>
+            <h6 id="copy">&copy; Brandt Carlson 2023</h6>
         </>
     )
 }

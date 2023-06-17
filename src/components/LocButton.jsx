@@ -18,7 +18,7 @@ export default function LocButton(props) {
 
   };
   const getLocDeets = async (st) => {
-    let response = await axios.get(`http://127.0.0.1:5000/api/loc/rando/${st}`);
+    let response = await axios.get(`https://behind-the-madiverse.onrender.com/api/loc/rando/${st}`);
     return response.status === 200 ? response.data : null
   };
   const loadLocDeets = async (st) => {

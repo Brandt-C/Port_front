@@ -16,7 +16,7 @@ export default function CharButton(props) {
     loadCharDeets(event.target.value);
   };
   const getCharDeets = async (st) => {
-    let response = await axios.get(`http://127.0.0.1:5000/api/char/rando/${st}`);
+    let response = await axios.get(`https://behind-the-madiverse.onrender.com/api/char/rando/${st}`);
     return response.status === 200 ? response.data : null
   };
   const loadCharDeets = async (st) => {
