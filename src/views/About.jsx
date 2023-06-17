@@ -11,15 +11,15 @@ const About = () => {
                     Now we're on the same page!  With choices from several different universes you can create wonky, wacky, and fun stories blending characters and locations into. . .uh, stories of the Madiverse.
                 </p>
                 <p>This project has been driven with the help of at least 5 different APIs:</p>
-                <a href="https://swapi.dev" ><h4 className="api-links">The Star Wars API</h4></a>
-                <a href="https://starwars-visualguide.com/" ><h4 className="api-links">The Star Wars Visual Guide</h4></a>
-                <a href="https://rickandmortyapi.com/"><h4 className="api-links">The Rick and Morty API</h4></a>
-                <a href="https://pokeapi.co/"><h4 className="api-links">The Pokémon API</h4></a>
-                <a href="https://thronesapi.com/"><h4 className="api-links">The Game of Thrones Character API</h4></a>
-                <p>Star Wars and all associated names are copyright <a href="https://www.lucasfilm.com/">Lucasfilm ltd.</a>  
-                Rick and Morty is created by Justin Roiland and Dan Harmon for <a href="https://www.adultswim.com/">Adult Swim</a>.  
-                Game of Thrones is created by David Benioff and D. B. Weiss for <a href="https://www.hbo.com/game-of-thrones">HBO</a>, based on "A Song of Ice and Fire" by George R. R. Martin. 
-                Pokémon is a  Japanese media franchise managed by <a href="https://www.pokemon.com/us">The Pokémon Company</a>, founded by <a href="https://www.nintendo.com/">Nintendo</a>, Game Freak, and Creatures. 
+                <a href="https://swapi.dev" target="_blank"><h4 className="api-links">The Star Wars API</h4></a>
+                <a href="https://starwars-visualguide.com/" target="_blank"><h4 className="api-links">The Star Wars Visual Guide</h4></a>
+                <a href="https://rickandmortyapi.com/" target="_blank"><h4 className="api-links">The Rick and Morty API</h4></a>
+                <a href="https://pokeapi.co/" target="_blank"><h4 className="api-links">The Pokémon API</h4></a>
+                <a href="https://thronesapi.com/" target="_blank"><h4 className="api-links">The Game of Thrones Character API</h4></a>
+                <p>Star Wars and all associated names are copyright <a href="https://www.lucasfilm.com/" target="_blank">Lucasfilm ltd.</a>  
+                Rick and Morty is created by Justin Roiland and Dan Harmon for <a href="https://www.adultswim.com/" target="_blank">Adult Swim</a>.  
+                Game of Thrones is created by David Benioff and D. B. Weiss for <a href="https://www.hbo.com/game-of-thrones" target="_blank">HBO</a>, based on "A Song of Ice and Fire" by George R. R. Martin. 
+                Pokémon is a  Japanese media franchise managed by <a href="https://www.pokemon.com/us" target="_blank">The Pokémon Company</a>, founded by <a href="https://www.nintendo.com/" target="_blank">Nintendo</a>, Game Freak, and Creatures. 
 The data and images are used without claim of ownership and belong to their respective owners.</p>
                 <p>Questions?  Bugs?  Concerns?  Praise?  Let me know: <a href="mailto:Brandt.Carlson11@gmail.com">Brandt.Carlson11@gmail.com</a>
                 </p>
@@ -51,7 +51,7 @@ The data and images are used without claim of ownership and belong to their resp
             </div>
             <div className="old-links">
                 <h5>Other older things floating around:</h5>
-                <a href="https://cartoony-battle.glitch.me/"><h5>Pokemon Battle</h5></a>
+                <a href="https://cartoony-battle.glitch.me/" target="_blank"><h5>Pokemon Battle</h5></a>
             </div>
             <h6 id="copy">&copy; Brandt Carlson 2023</h6>
         </>
