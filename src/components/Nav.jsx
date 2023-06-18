@@ -52,7 +52,7 @@ export default function Nav() {
 
                         }}
                     >
-                        <img src='./src/assets/logo1st.png' style={{ maxWidth: 50 + 'px', borderRadius: 45 + '%' }} />
+                        <img src='https://drive.google.com/uc?id=1WY5X64cDPoaY4gP5RRQ1nvw4Z54pna2G' style={{ maxWidth: 50 + 'px', borderRadius: 45 + '%' }} />
                     </Typography>
                     <Typography
                         variant="h5"
@@ -104,7 +104,7 @@ export default function Nav() {
 
                     <Box sx={{ flexGrow: 0 }}>
 
-                                <Avatar alt="Brandt LinkedIn" src="./src/assets/headshot_LI_rs.jpg" />
+                                <Avatar alt="Brandt LinkedIn" src="https://drive.google.com/uc?id=12jfV39emzzTiwiNDXmE7MN3g4vAP8-xX" />
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
