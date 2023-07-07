@@ -8,3 +8,8 @@
 #copy{
     min-height: 100%;
 }
+@media (max-width: 535px) {
+    .car-pics {
+        max-width: 240px;
+    }
+}
