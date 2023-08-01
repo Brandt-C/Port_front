@@ -23,10 +23,10 @@ export default function LocButton(props) {
   };
   const loadLocDeets = async (st) => {
     let data = await getLocDeets(st);
-    console.log(data);
+    // console.log(data);
     let copyLocs = props.locs;
     copyLocs[props.id.slice(1)] = data.data;
-    console.log(copyLocs);
+    // console.log(copyLocs);
     props.setLocs(copyLocs)
   };
   useEffect(() => {

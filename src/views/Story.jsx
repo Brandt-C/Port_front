@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 const Story = () => {
 
     let { state } = useLocation();
-    console.log(state);
+    // console.log(state);
 
     return (
         <>
@@ -21,14 +21,14 @@ const Story = () => {
                 </div>
                 <div className="card-container">
                     {state.chars.map((char, id) => {
-                        return <CharCard id={id} char={char}></CharCard>
+                        return <CharCard id={id} key={id} char={char}></CharCard>
                     })}
                 </div>
                 <h3>On:</h3>
                 <div className="loc-container">
                     
                     {state.locs.map((loc, id) => {
-                        return <LocCard id={id} loc={loc}></LocCard>
+                        return <LocCard id={id} key={id} loc={loc}></LocCard>
                     })}
                 </div>
 

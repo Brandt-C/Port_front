@@ -27,9 +27,9 @@ const Mad = () => {
     }
     const [deets, setDeets] = useState(() => loadDeets());
 
-    const [ready, setReady] = useState({r:0})
-    const [chars, setChars] = useState();
-    const [locs, setLocs] = useState();
+    const [ready, setReady] = useState(false)
+    const [chars, setChars] = useState(false);
+    const [locs, setLocs] = useState(false);
     const [text, setText] = useState();
 
 
@@ -42,7 +42,7 @@ const Mad = () => {
         for (let i = 0; i < deets.data.locs; i++) {
             locButtonArray.push('l' + i)
         };
-        console.log(charButtonArray, locButtonArray);
+        // console.log(charButtonArray, locButtonArray);
         setChars(charButtonArray);
         setLocs(locButtonArray);
     }
@@ -71,6 +71,9 @@ const Mad = () => {
     // }
 
     const checkReady = () => {
+            if (!chars || !locs){
+                return false
+            }
             for (let i = 0; i < chars.length; i++) {
                 if (typeof chars[i] !== 'object') {
                     return false
@@ -84,25 +87,24 @@ const Mad = () => {
     }
     const sendStory = async () => {
         // await checkChars();
+
+
         if (!checkReady()){
-            setReady({r:1});
-            return
+            console.log('Not ready');
+        } else {
+            setReady(true);
         }
-        setReady({r:2});
-        console.log(chars); // prints out the ids in the array ==> ['c0', 'c1 ], looks like state isn't actually being reset?
+        // console.log(chars); // prints out the ids in the array ==> ['c0', 'c1 ], looks like state isn't actually being reset?
         let response = await axios.post("https://behind-the-madiverse.onrender.com/api/getstory", {
             c: chars,
             l: locs,
             sid: deets.sid
         });
         if (response.status === 200) {
-            console.log(response.data, response.data.text);
+            // console.log(response.data, response.data.text);
             setText(response.data.text);
         }
     }
-    useEffect(() => {
-        console.log('looking for props to cause something here. . . . ');
-    }, []);
 
     {/* <Button variant='oulined' onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button> */ }
     {/* <Link to="/story" state={{'chars':chars, 'locs':locs}}><Button variant='oulined' startIcon={< AutoStoriesOutlinedIcon/>}>Let's make a story!</Button></Link> */ }
@@ -126,11 +128,15 @@ const Mad = () => {
                     }) : null}
                 </div>
                 <div className="incomp-alert">
-                {ready && ready.r === 1 ? <IncompleteAlert ></IncompleteAlert> :null}
+                {/* {ready && ready.r === 1 ? <IncompleteAlert ></IncompleteAlert> :null} */}
                 </div>
                 <div className="ready-button">
-                    {chars?
-                        <Button variant='oulined'  sx={{my:2}} onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> : null}
+                    {!ready && !text && chars?
+                        <Button variant='oulined'  sx={{my:2}} onClick={sendStory} startIcon={< AutoStoriesOutlinedIcon />}>Let's make a story!</Button> 
+                        :
+                        ready && !text ?
+                        <IncompleteAlert ></IncompleteAlert>
+                        : null}
                 </div>
                 <div className="send-story-button">
                 {text ?

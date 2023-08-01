@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 export default function CharCard(props) {
-    console.log(props.char);
+    // console.log(props.char);
     if (props.char.uni === "Star Wars"){
         props.char.img = `https://starwars-visualguide.com/assets/img/characters/${props.char.id.slice(2)}.jpg`
     }
@@ -32,8 +32,8 @@ export default function CharCard(props) {
         <Typography variant="body2" color="text.light">
           {props.char.desc}
         </Typography>
+        <h5>From</h5>
         <Typography variant="body2" color="text.light">
-          <h5>From</h5>
           {props.char.uni}
         </Typography>
       </CardContent>

@@ -5,15 +5,22 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
-    const hi = async () => {
-        let response = await axios.get('https://behind-the-madiverse.onrender.com/api/hi');
-        return response.status === 200 ? response.data : null
-    }
-    const loadHi = async () => {
-        let data = await hi();
-        console.log(data.message);
-    }
-    loadHi();
+
+        // THIS was a leftover from sleeping server, COMPLETELY unnecesary now
+
+        
+    // const hi = async () => {
+    //     let response = await axios.get('https://behind-the-madiverse.onrender.com/api/hi');
+    //     return response.status === 200 ? response.data : null
+    // }
+
+    // const loadHi = async () => {
+    //     let data = await hi();
+    //     console.log(data.message);
+    // }
+    // loadHi();
+
+
     return (
         <>
             <h1> Welcome to the Madiverse</h1>

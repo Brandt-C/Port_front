@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 
 export default function LocCard(props) {
-    console.log(props.loc);
+    // console.log(props.loc);
     // if (props.loc.uni === "Star Wars"){
     //     props.loc.img = `https://starwars-visualguide.com/assets/img/characters/${props.char.id.slice(2)}.jpg`
     // }
@@ -17,10 +17,6 @@ export default function LocCard(props) {
         my: 1,
         border: '1px solid white',
         }}>
-      <CardMedia
-
-        title={props.loc.name}
-      />
       <CardContent id='c-content'>
         <Typography gutterBottom variant="h4" component="div">
         {props.loc.name}

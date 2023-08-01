@@ -21,10 +21,10 @@ export default function CharButton(props) {
   };
   const loadCharDeets = async (st) => {
     let data = await getCharDeets(st);
-    console.log(data);
+    // console.log(data);
     let copyChars = props.chars;
     copyChars[props.id.slice(1)] = data.data;
-    console.log(copyChars);
+    // console.log(copyChars);
     props.setChars(copyChars);
   };
   useEffect(() => {
