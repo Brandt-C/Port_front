@@ -28,17 +28,17 @@ const Home = () => {
             <h5></h5>
             <div className="car-container">
               <Carousel autoplay='true'>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1fay3WTCepz2z1fFejnm-WUQY-MnMa3Jg" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1hbKkZXgDl5LqiwwLNXx2z-uQ9iioOtIc" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1qdyjk6PScVxEHdQRQ-RLHov6o2-95e5h" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=15k0e8Tl8_UNZLVgc7HjzYqGkLoK5l4EG" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1UVdvOyRzVK-chTgFFwvlpCioF2ryomPk" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1-xN_1Qe5byVHSiSrATk4AZW0yxkUcjlC" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1PmW8pvWvHI9N7PyQ_lOt60_oCkcFDQuK" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1vwUDQXyUWYn-F9VRZT9ciGomgj59ZBBD" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=17nrB1f09HOwXgxg64D_Dp5GiFjXXpQeu" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1Dh5G2uH3gt3XHAIQ0IEMZbFxa4G_RCLe" width='400'/></div>
-                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/uc?id=1NOtxnK6JZe_mYVqajku2gEYNS8E7iB_s" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1fay3WTCepz2z1fFejnm-WUQY-MnMa3Jg&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1hbKkZXgDl5LqiwwLNXx2z-uQ9iioOtIc&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1qdyjk6PScVxEHdQRQ-RLHov6o2-95e5h&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=15k0e8Tl8_UNZLVgc7HjzYqGkLoK5l4EG&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1UVdvOyRzVK-chTgFFwvlpCioF2ryomPk&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1-xN_1Qe5byVHSiSrATk4AZW0yxkUcjlC&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1PmW8pvWvHI9N7PyQ_lOt60_oCkcFDQuK&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1vwUDQXyUWYn-F9VRZT9ciGomgj59ZBBD&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=17nrB1f09HOwXgxg64D_Dp5GiFjXXpQeu&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1Dh5G2uH3gt3XHAIQ0IEMZbFxa4G_RCLe&sz=w1000" width='400'/></div>
+                <div style={{display:'flex', justifyContent:'center'}}><img className="car-pics" src="https://drive.google.com/thumbnail?id=1NOtxnK6JZe_mYVqajku2gEYNS8E7iB_s&sz=w1000" width='400'/></div>
                 
             </Carousel>  
             </div>

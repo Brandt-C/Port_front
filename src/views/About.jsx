@@ -6,7 +6,7 @@ const About = () => {
         <>
             <div className="site-div">
                 <h1>What is this?</h1>
-                <img id='mu' src="https://drive.google.com/uc?id=1pG83ervfqLNakXUWwZsiP9walSMmzzco" ></img>
+                <img id='mu' src="https://drive.google.com/thumbnail?id=1pG83ervfqLNakXUWwZsiP9walSMmzzco&sz=w1000" ></img>
                 <p>An idea was born of making stories out of characters from a fictional universe in the style of Madlibs.  Only one you say???
                     Now we're on the same page!  With choices from several different universes you can create wonky, wacky, and fun stories blending characters and locations into. . .uh, stories of the Madiverse.
                 </p>
@@ -30,8 +30,8 @@ The data and images are used without claim of ownership and belong to their resp
                 <p className="photo-cap">These aren't me but they ARE generated with prompts that could loosely relate to me.</p>
     
                 <div className="pics-div">
-                    <img className="work-pics" src="https://drive.google.com/uc?id=1Wtr7AR7bBWDHfRSyGIfsCBY4OS8JZdN-" ></img>
-                    <img className="work-pics" src="https://drive.google.com/uc?id=1VgSJ8TAGJG772jPha2gP-om43Vh7Ds-V" ></img>
+                    <img className="work-pics" src="https://drive.google.com/thumbnail?id=1Wtr7AR7bBWDHfRSyGIfsCBY4OS8JZdN-&sz=w1000" ></img>
+                    <img className="work-pics" src="https://drive.google.com/thumbnail?id=1VgSJ8TAGJG772jPha2gP-om43Vh7Ds-V&sz=w1000" ></img>
                 </div>
 
 
@@ -46,8 +46,8 @@ The data and images are used without claim of ownership and belong to their resp
             </div>
 
             <div>
-                <Link className='logo-link' to='https://www.linkedin.com/in/brandt-carlson-51735625' target="_blank"><img src='https://drive.google.com/uc?id=1WeH4zaBbhUhp-Ke97jgVn5m_PCNMNBpO' /></Link>
-                <Link className='logo-link' to='https://github.com/Brandt-C' target="_blank"><img src="https://drive.google.com/uc?id=1syPmyBiYDSyNrYp_nMPwu-AV3M3qssCE" style={{ maxWidth: 50 + 'px' }} /></Link>
+                <Link className='logo-link' to='https://www.linkedin.com/in/brandt-carlson-51735625' target="_blank"><img src='https://drive.google.com/thumbnail?id=1WeH4zaBbhUhp-Ke97jgVn5m_PCNMNBpO&sz=w1000' /></Link>
+                <Link className='logo-link' to='https://github.com/Brandt-C' target="_blank"><img src="https://drive.google.com/thumbnail?id=1syPmyBiYDSyNrYp_nMPwu-AV3M3qssCE&sz=w1000" style={{ maxWidth: 50 + 'px' }} /></Link>
             </div>
             <div className="old-links">
                 <h5>Other older things floating around:</h5>
